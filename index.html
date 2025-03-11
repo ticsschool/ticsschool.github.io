@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tustin International Charter School | Mandarin Immersion</title>
+    <meta name="description" content="Tustin International Charter School - providing quality Chinese language education and cultural immersion programs for students.">
+    <style>
+        :root {
+            --primary-color: #2c2f83; /* Dark blue from original site */
+            --secondary-color: #fceee3; /* Light peach from original site */
+            --accent-color: #fd9792; /* Salmon accent color */
+            --text-color: #333;
+            --light-text: #fff;
+            --dark-text: #2c2f83;
+            --section-padding: 5rem 2rem;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Avenir', 'Helvetica', Arial, sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 0.8rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-text);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-delay-1 {
+            transition-delay: 0.2s;
+        }
+
+        .fade-in-delay-2 {
+            transition-delay: 0.4s;
+        }
+
+        .fade-in-delay-3 {
+            transition-delay: 0.6s;
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Skip to Main Content */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #fff 100%);
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-size: 2.7rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--dark-text);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .chinese-text {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+
+        .chinese-text-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: var(--section-padding);
+            background-color: #fff;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-image {
+            flex: 0 0 40%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 350px; /* Fixed height for better alignment */
+        }
+
+        .about-text {
+            flex: 0 0 55%;
+            align-self: center; /* Ensure vertical centering */
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image covers the container properly */
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Vision Section */
+        .vision-section {
+            padding: var(--section-padding);
+            background-color: var(--secondary-color);
+            margin-top: 2rem;
+        }
+
+        .vision-container {
+            display: flex;
+            flex-direction: row-reverse; /* Image on right, text on left */
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .vision-image {
+            flex: 0 0 40%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 350px;
+        }
+
+        .vision-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .vision-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .vision-text {
+            flex: 0 0 55%;
+            text-align: left;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: var(--section-padding);
+            background-color: #fff;
+        }
+
+        .programs-container {
+            text-align: center;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .program-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .program-content p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Team Section */
+        .team {
+            padding: var(--section-padding);
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .team-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--section-padding);
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            border-bottom: none;
+            padding: 0;
+        }
+
+        .faq-item.full-width {
+            grid-column: 1 / -1; /* Make the item span all columns */
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding: 1.5rem 1.5rem 0.5rem;
+            border-bottom: 2px solid rgba(44, 47, 131, 0.1);
+        }
+
+        .faq-answer {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-color);
+            padding: 0 1.5rem 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: var(--light-text);
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 2rem auto;
+            font-size: 1.2rem;
+        }
+
+        .contact-email {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .contact-email:hover {
+            color: var(--accent-color);
+        }
+
+        /* Subscribe Section */
+        .subscribe {
+            padding: 3rem 2rem;
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .subscribe-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .subscribe-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-contact {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-contact h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .chinese-text {
+                font-size: 1.4rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-content, .vision-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .about-image, .about-text, .vision-image, .vision-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .vision-text {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+                white-space: normal;
+            }
+
+            .chinese-text {
+                font-size: 1.3rem;
+            }
+
+            .chinese-text-container {
+                gap: 1.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .header-container {
+                padding: 1rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 8rem 1rem 4rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .chinese-text {
+                font-size: 1.2rem;
+            }
+
+            .chinese-text-container {
+                gap: 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main" class="skip-link">Skip to Main Content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <a href="#" class="logo">Tustin International Charter&nbsp;School</a>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content" id="main">
+            <h1 class="fade-in">Tustin International Charter School</h1>
+            <div class="chinese-text-container fade-in fade-in-delay-1">
+                <p class="chinese-text">塔斯町國際雙語學校</p>
+                <p class="chinese-text">塔斯町中英雙語學校</p>
+            </div>
+            <div class="hero-buttons fade-in fade-in-delay-3">
+                <a href="#programs" class="btn">Our Vision</a>
+                <a href="#contact" class="btn btn-secondary">Support Our Petition</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section fade-in">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image fade-in-left">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Students in a classroom setting" loading="lazy">
+                </div>
+                <div class="about-text fade-in-right">
+                    <h2>About Our Initiative</h2>
+                    <h3>Creating Global Citizens Through Bilingual Education</h3>
+                    <p>Tustin International Charter School (TICS) is a proposed public charter institution that would operate within the Tustin Unified School District, serving students from Transitional Kindergarten through 5th grade. Our petition was submitted to the Tustin Unified School District Board of Education on November 1st, 2023.</p>
+                    <p>We champion Mandarin immersion education in Orange County public schools because proficiency in Mandarin provides students with valuable skills for future careers and expands their opportunities in the global marketplace. Beyond language acquisition, our program would immerse students in Chinese culture, history, and traditions, fostering cross-cultural understanding, respect, and appreciation for diverse perspectives.</p>
+                    <p>Our petition has garnered strong support from educators, parents, community members, and concerned citizens of Tustin who recognize the value of this unique educational opportunity. We believe TICS would fulfill the legislative intent of the Charter Schools Act by creating an immersive, bilingual learning environment that prepares students for success in our interconnected world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="vision-section fade-in">
+        <div class="container">
+            <div class="vision-container">
+                <div class="vision-image fade-in-left">
+                    <img src="https://images.unsplash.com/photo-1555431189-0fabf2667795?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Happy students learning together" loading="lazy">
+                </div>
+                <div class="vision-text fade-in-right">
+                    <h2>Our Vision & Mission</h2>
+                    <h3>Cultivating Global Citizens</h3>
+                    <p><strong>Vision:</strong> To nurture and inspire lifelong learners and engaged global citizens through a positive and robust learning environment for transitional kindergarten through 5th-grade students.</p>
+                    <p><strong>Mission:</strong> To provide a bilingual and bi-literate education that fosters high academic achievement while cultivating emotional intelligence, empathy, and curiosity, equipping students with essential skills to thrive in our dynamic global society.</p>
+                    <p>Students at our proposed Mandarin immersion school would develop advanced language proficiency alongside enhanced cognitive flexibility, critical thinking, and problem-solving abilities—skills essential for success in an increasingly interconnected world.</p>
+                    <p>Our comprehensive educational approach integrates Mandarin language immersion with social-emotional learning and a curriculum aligned with California Common Core standards, all delivered through inquiry-based teaching that incorporates STEAM (Science, Technology, Engineering, Arts, and Mathematics).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container programs-container">
+            <h2 class="fade-in">Our Proposed Programs</h2>
+            <p class="fade-in fade-in-delay-1">Our innovative Mandarin immersion program follows a balanced 50-50 model, with students spending half the day learning in Mandarin and half in English. This approach ensures students develop strong academic competency and advanced proficiency in both languages.</p>
+            <div class="programs-grid">
+                <div class="program-card fade-in fade-in-delay-1">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mandarin Immersion Program">
+                    </div>
+                    <div class="program-content">
+                        <h3>Mandarin Immersion</h3>
+                        <p>The Common Core State Standards would be delivered in both Mandarin and English through our partial immersion model. Starting with a 50:50 ratio in early grades, we would gradually adjust the balance as students progress, developing academic competency in both languages.</p>
+                    </div>
+                </div>
+                <div class="program-card fade-in fade-in-delay-2">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Inquiry-Based Learning">
+                    </div>
+                    <div class="program-content">
+                        <h3>Inquiry-Based Learning</h3>
+                        <p>Students would engage in collaborative, experiential, and interdisciplinary STEAM projects to investigate and respond to real-world questions, problems, and challenges. These meaningful projects would integrate Science, Technology, Engineering, Arts, and Mathematics into a single focus to create unique solutions.</p>
+                    </div>
+                </div>
+                <div class="program-card fade-in fade-in-delay-3">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Social-Emotional Learning">
+                    </div>
+                    <div class="program-content">
+                        <h3>Social-Emotional Learning</h3>
+                        <p>To thrive in our 21st century interconnected world, students need both strong academic foundations and well-developed social-emotional competencies, including self-awareness, self-management, and self-direction. We would integrate these essential skills through our PBIS program, providing daily opportunities for practice and growth throughout the school day.</p>
+                    </div>
+                </div>
+                <div class="program-card fade-in fade-in-delay-1">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1581078426770-6d336e5de7bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Language, Content, and Culture Integration">
+                    </div>
+                    <div class="program-content">
+                        <h3>Integrating Language, Content, and Culture</h3>
+                        <p>Teachers would use thematically organized units to design lessons that are culturally rich and cognitively engaging. Students would build, reinforce, and expand their knowledge of other disciplines while using Mandarin. They would interact with authentic resources, exploring Chinese cultural products, practices, and perspectives, and have opportunities to communicate with native Mandarin speakers through language exchange programs.</p>
+                    </div>
+                </div>
+                <div class="program-card fade-in fade-in-delay-2">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Technology in the Classroom">
+                    </div>
+                    <div class="program-content">
+                        <h3>Technology in the Classroom</h3>
+                        <p>To increase learning opportunities for all pupils and offer a more personalized approach, we would use technology such as Google Classroom or Canvas on a daily basis. This would enable us to offer differentiated learning activities to meet individual student needs through flexible grouping and blended learning, ensuring every student receives instruction tailored to their unique learning style and pace.</p>
+                    </div>
+                </div>
+                <div class="program-card fade-in fade-in-delay-3">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Family Involvement">
+                    </div>
+                    <div class="program-content">
+                        <h3>YOU: Family Involvement</h3>
+                        <p>Parents and guardians are vital partners in our educational mission. We would create abundant opportunities for families to volunteer in classrooms, participate in cultural events, and support language learning at home. Through regular workshops, family language nights, and collaborative projects, we would ensure families are meaningfully integrated into their child's bilingual journey, fostering a vibrant community of learners that extends beyond the classroom walls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container team-content">
+            <h2 class="fade-in">Our Founding Team</h2>
+            <p class="fade-in fade-in-delay-1">Our founding team comprises dedicated educators, language specialists, and community leaders who share a passion for bilingual education and cultural exchange. With extensive experience in education and a deep understanding of both Chinese and American educational systems, our team is committed to creating an exceptional learning environment where all students can thrive.</p>
+            <a href="ba009a_b958f176f968401194cbb29232f11802.pdf" class="btn fade-in fade-in-delay-2" target="_blank">Learn More</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="fade-in">Frequently Asked Questions</h2>
+            <p class="fade-in fade-in-delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Find answers to common questions about our proposed Mandarin immersion charter school, its programs, and enrollment process.</p>
+            <div class="faq-container">
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <h3 class="faq-question">What is the current status of Tustin International Charter School?</h3>
+                        <div class="faq-answer">
+                            <p>TICS is currently a proposed charter school. Our petition was submitted to the Tustin Unified School District Board of Education on November 1st, 2023. We are seeking approval to open for the 2025-2026 academic year. This website outlines our vision for the school and the educational experience we aim to provide if approved.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in fade-in-delay-1">
+                        <h3 class="faq-question">What grades would Tustin International Charter School serve?</h3>
+                        <div class="faq-answer">
+                            <p>If approved, TICS would serve students from Transitional Kindergarten (TK) through 5th grade. Our inaugural academic year (2025-2026) would include one Transitional Kindergarten class, two sections each for kindergarten, 1st grade, and 2nd grade, followed by a single section for both 3rd and 4th grades.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in fade-in-delay-2">
+                        <h3 class="faq-question">How would the Mandarin immersion program work?</h3>
+                        <div class="faq-answer">
+                            <p>Our program would implement a balanced 50-50 model, where students spend half the day learning in Mandarin and half in English during the first three years.</p>
+                            <p>Common Core State Standards would be taught in both languages, with the goal of developing strong academic competency and advanced proficiency in both English and Mandarin.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item full-width fade-in">
+                        <h3 class="faq-question">What are the benefits of a Mandarin immersion education?</h3>
+                        <div class="faq-answer">
+                            <p>Students in our proposed Mandarin immersion program would benefit in multiple ways:</p>
+                            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                                <li>Development of high-level language proficiency in the world's most widely spoken language</li>
+                                <li>Enhanced cognitive flexibility, critical thinking, and problem-solving skills</li>
+                                <li>Improved academic performance across all subject areas</li>
+                                <li>Cultural competence and global perspective</li>
+                                <li>Valuable job skills for the global marketplace</li>
+                                <li>Deeper appreciation for cultural diversity</li>
+                            </ul>
+                            <p>Research shows that bilingualism is linked to improved cognitive development and academic performance.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item full-width fade-in fade-in-delay-1">
+                        <h3 class="faq-question">What teaching methods would TICS use?</h3>
+                        <div class="faq-answer">
+                            <p>Our proposed educational approach would combine several innovative methods:</p>
+                            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                                <li><strong>Inquiry-Based Learning:</strong> Students would engage in collaborative, experiential projects to investigate real-world questions and challenges</li>
+                                <li><strong>STEAM Framework:</strong> Integration of Science, Technology, Engineering, Arts, and Mathematics into interdisciplinary projects</li>
+                                <li><strong>Social-Emotional Learning:</strong> Development of self-awareness, self-management, and self-direction skills</li>
+                                <li><strong>Technology Integration:</strong> Daily use of educational technology to offer differentiated learning activities through flexible grouping and blended learning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item full-width fade-in fade-in-delay-2">
+                        <h3 class="faq-question">How would TICS integrate language, content, and culture?</h3>
+                        <div class="faq-answer">
+                            <p>Our teachers would use thematically organized units to design lessons that are culturally rich and cognitively engaging. This would create a context in which learners use their language skills to learn more about Chinese culture and the world they live in.</p>
+                            <p>Students would build, reinforce, and expand their knowledge of other disciplines and the world while using Mandarin. They would interact frequently with authentic resources, exploring the products, practices, and perspectives of Chinese culture. They would have opportunities to communicate and interact appropriately with native Mandarin speakers through language exchange programs organized by the school.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item full-width fade-in">
+                        <h3 class="faq-question">How would technology be used in the classroom?</h3>
+                        <div class="faq-answer">
+                            <p>Technology would be an integral part of our educational approach. To increase learning opportunities for all pupils and offer a more personalized approach, we would use platforms such as Google Classroom or Canvas on a daily basis on campus.</p>
+                            <p>This technology integration would allow us to:</p>
+                            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                                <li>Offer differentiated learning activities to meet individual student needs</li>
+                                <li>Implement flexible grouping based on student progress and learning styles</li>
+                                <li>Facilitate blended learning approaches that combine traditional and digital instruction</li>
+                                <li>Provide immediate feedback and assessment data to guide instruction</li>
+                                <li>Create opportunities for collaborative projects across languages</li>
+                            </ul>
+                            <p>Our goal would be to use technology not as a replacement for quality teaching, but as a tool to enhance and personalize the learning experience for each student.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item full-width fade-in fade-in-delay-1">
+                        <h3 class="faq-question">How can families be involved in their child's education at TICS?</h3>
+                        <div class="faq-answer">
+                            <p>Family involvement would be a cornerstone of our educational approach. We believe that parents and guardians are essential partners in their child's bilingual journey. We would offer multiple ways for families to participate:</p>
+                            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                                <li>Classroom volunteering opportunities to support learning activities</li>
+                                <li>Cultural celebrations and events where families can share traditions</li>
+                                <li>Parent workshops on supporting language development at home</li>
+                                <li>Family language nights where parents learn alongside their children</li>
+                                <li>A parent advisory committee to provide input on school programs</li>
+                                <li>Regular communication through newsletters, language-appropriate resources, and parent-teacher conferences</li>
+                            </ul>
+                            <p>By creating a strong school-home connection, we would ensure that language learning extends beyond the classroom and becomes integrated into family life, reinforcing both language skills and cultural appreciation.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in">
+                        <h3 class="faq-question">Who could attend TICS if approved?</h3>
+                        <div class="faq-answer">
+                            <p>If approved, TICS would be a public charter school open to all students who wish to attend. No prior knowledge of Mandarin would be required to enroll. If we receive more applications than available spaces, admission would be determined through a public random drawing (lottery) process, with preferences given as required by Education Code.</p>
+                            <p>As a public charter school, TICS would not charge tuition and would not discriminate based on any protected characteristics including disability, gender, nationality, race, ethnicity, or religion.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in fade-in-delay-1">
+                        <h3 class="faq-question">How can I support this charter school petition?</h3>
+                        <div class="faq-answer">
+                            <p>There are several ways you can support our petition:</p>
+                            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                                <li>Contact us to sign our petition of support</li>
+                                <li>Attend Tustin Unified School District Board meetings where the charter is discussed</li>
+                                <li>Share information about our proposed school with other families who might be interested</li>
+                                <li>Volunteer your expertise if you have experience in education, language instruction, or school operations</li>
+                            </ul>
+                            <p>Please reach out to us via the contact information below if you'd like to get involved.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in fade-in-delay-2">
+                        <h3 class="faq-question">When would the school open if approved?</h3>
+                        <div class="faq-answer">
+                            <p>If our charter petition is approved, we plan to open Tustin International Charter School for the 2025-2026 academic year, beginning in July 2025. The exact timeline for enrollment and other pre-opening activities would be communicated once approval is received.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="fade-in">Contact Us</h2>
+            <div class="contact-info fade-in fade-in-delay-1">
+                <p>For more information about our charter school petition, ways to support our initiative, or opportunities to get involved, please contact us directly.</p>
+                <a href="mailto:info@tics.school" class="contact-email">info@tics.school</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <h3>Tustin International Charter School</h3>
+                <p>A proposed charter school developing global citizens through immersive bilingual education</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p>Email: info@tics.school</p>
+            </div>
+        </div>
+        <div class="copyright container">
+            <p>&copy;2025 by Tustin International Charter School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const menu = document.getElementById('menu');
+            
+            menuBtn.addEventListener('click', function() {
+                menu.classList.toggle('show');
+            });
+
+            // Close menu when clicking on a link
+            const menuLinks = document.querySelectorAll('#menu a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menu.classList.remove('show');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Fade-in animation for elements when they enter the viewport
+            const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+            
+            // Function to check if an element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85
+                );
+            }
+            
+            // Function to add active class to elements in viewport
+            function handleScrollAnimation() {
+                fadeElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        element.classList.add('active');
+                    }
+                });
+            }
+            
+            // Initial check on page load
+            handleScrollAnimation();
+            
+            // Check on scroll
+            window.addEventListener('scroll', handleScrollAnimation);
+        });
+    </script>
+</body>
+</html> 
